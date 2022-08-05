@@ -1,4 +1,4 @@
-import com.Book;
+import com.jdev.model.Book;
 
 public class Single {
 
