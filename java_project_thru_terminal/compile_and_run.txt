@@ -1,0 +1,319 @@
+we need place in this path - java_se/java_project_thru_terminal
+
+--clean up from projects classes folder content
+rm -rfv project1/classes/* project2/classes/*
+
+--check folders, they should be empty
+tree project1/classes/ && tree project2/classes/
+
+--compile project1
+javac -verbose -d project1/classes/ -sourcepath project1/src/ project1/src/com/jdev/*.java project1/src/com/jdev/model/*.java project1/src/com/jdev/service/*.java
+
+--check project1 if succes compiled
+tree project1/classes/
+
+--run main class
+java -cp project1/classes/ com.jdev.MainEntryPoint
+
+--compile project2
+javac -verbose -d project2/classes/ -sourcepath ./project2/src/ -cp ./project1/classes/ ./project2/src/com/jdev/project2/Main.java 
+
+--check project2 if succes compiled
+tree project2/classes/
+
+--run main class project2
+java -cp project1/classes/:./project2/classes/ com.jdev.project2.Main
+
+--run main class project1 from project2
+java -cp project1/classes/:./project2/classes/ com.jdev.MainEntryPoint
+
+
+
+
+
+
+-------------------------comand ran with results
+rm -rfv project1/classes/* project2/classes/*
+	removed 'project1/classes/com/jdev/model/UserDetails.class'
+	removed 'project1/classes/com/jdev/model/User.class'
+	removed directory 'project1/classes/com/jdev/model'
+	removed 'project1/classes/com/jdev/service/UserService.class'
+	removed directory 'project1/classes/com/jdev/service'
+	removed 'project1/classes/com/jdev/MainEntryPoint.class'
+	removed directory 'project1/classes/com/jdev'
+	removed directory 'project1/classes/com'
+	removed 'project2/classes/com/jdev/project2/Main.class'
+	removed directory 'project2/classes/com/jdev/project2'
+	removed directory 'project2/classes/com/jdev'
+	removed directory 'project2/classes/com'
+	
+
+tree project1/classes/ && tree project2/classes/
+	project1/classes/
+
+	0 directories, 0 files
+	project2/classes/
+
+	0 directories, 0 files
+
+javac -verbose -d project1/classes/ -sourcepath project1/src/ project1/src/com/jdev/*.java project1/src/com/jdev/model/*.java project1/src/com/jdev/service/*.java
+	[parsing started SimpleFileObject[/home/java_dev/projects/github/java_basic/java_se/java_project_thru_terminal/project1/src/com/jdev/MainEntryPoint.java]]
+	[parsing completed 15ms]
+	[parsing started SimpleFileObject[/home/java_dev/projects/github/java_basic/java_se/java_project_thru_terminal/project1/src/com/jdev/model/UserDetails.java]]
+	[parsing completed 0ms]
+	[parsing started SimpleFileObject[/home/java_dev/projects/github/java_basic/java_se/java_project_thru_terminal/project1/src/com/jdev/model/User.java]]
+	[parsing completed 0ms]
+	[parsing started SimpleFileObject[/home/java_dev/projects/github/java_basic/java_se/java_project_thru_terminal/project1/src/com/jdev/service/UserService.java]]
+	[parsing completed 1ms]
+	[loading /modules/jdk.jartool/module-info.class]
+	[loading /modules/jdk.naming.ldap/module-info.class]
+	[loading /modules/jdk.naming.rmi/module-info.class]
+	[loading /modules/java.scripting/module-info.class]
+	[loading /modules/jdk.management.jfr/module-info.class]
+	[loading /modules/jdk.compiler/module-info.class]
+	[loading /modules/jdk.crypto.ec/module-info.class]
+	[loading /modules/java.security.jgss/module-info.class]
+	[loading /modules/jdk.naming.dns/module-info.class]
+	[loading /modules/jdk.jconsole/module-info.class]
+	[loading /modules/java.xml/module-info.class]
+	[loading /modules/jdk.unsupported/module-info.class]
+	[loading /modules/jdk.jshell/module-info.class]
+	[loading /modules/jdk.scripting.nashorn.shell/module-info.class]
+	[loading /modules/java.management/module-info.class]
+	[loading /modules/jdk.sctp/module-info.class]
+	[loading /modules/jdk.crypto.cryptoki/module-info.class]
+	[loading /modules/jdk.jdwp.agent/module-info.class]
+	[loading /modules/jdk.dynalink/module-info.class]
+	[loading /modules/jdk.internal.vm.ci/module-info.class]
+	[loading /modules/java.management.rmi/module-info.class]
+	[loading /modules/java.smartcardio/module-info.class]
+	[loading /modules/java.instrument/module-info.class]
+	[loading /modules/jdk.pack/module-info.class]
+	[loading /modules/java.sql.rowset/module-info.class]
+	[loading /modules/jdk.httpserver/module-info.class]
+	[loading /modules/jdk.net/module-info.class]
+	[loading /modules/jdk.xml.dom/module-info.class]
+	[loading /modules/jdk.jdi/module-info.class]
+	[loading /modules/jdk.attach/module-info.class]
+	[loading /modules/jdk.management/module-info.class]
+	[loading /modules/jdk.zipfs/module-info.class]
+	[loading /modules/jdk.internal.le/module-info.class]
+	[loading /modules/java.prefs/module-info.class]
+	[loading /modules/java.rmi/module-info.class]
+	[loading /modules/java.desktop/module-info.class]
+	[loading /modules/jdk.jsobject/module-info.class]
+	[loading /modules/jdk.jdeps/module-info.class]
+	[loading /modules/jdk.rmic/module-info.class]
+	[loading /modules/jdk.internal.jvmstat/module-info.class]
+	[loading /modules/java.sql/module-info.class]
+	[loading /modules/jdk.jstatd/module-info.class]
+	[loading /modules/java.se/module-info.class]
+	[loading /modules/jdk.security.auth/module-info.class]
+	[loading /modules/java.base/module-info.class]
+	[loading /modules/jdk.internal.opt/module-info.class]
+	[loading /modules/java.naming/module-info.class]
+	[loading /modules/jdk.management.agent/module-info.class]
+	[loading /modules/jdk.internal.ed/module-info.class]
+	[loading /modules/jdk.jcmd/module-info.class]
+	[loading /modules/jdk.internal.vm.compiler.management/module-info.class]
+	[loading /modules/java.security.sasl/module-info.class]
+	[loading /modules/jdk.jfr/module-info.class]
+	[loading /modules/java.datatransfer/module-info.class]
+	[loading /modules/jdk.scripting.nashorn/module-info.class]
+	[loading /modules/jdk.editpad/module-info.class]
+	[loading /modules/java.transaction.xa/module-info.class]
+	[loading /modules/java.compiler/module-info.class]
+	[loading /modules/jdk.accessibility/module-info.class]
+	[loading /modules/java.xml.crypto/module-info.class]
+	[loading /modules/jdk.internal.vm.compiler/module-info.class]
+	[loading /modules/java.logging/module-info.class]
+	[loading /modules/jdk.charsets/module-info.class]
+	[loading /modules/jdk.localedata/module-info.class]
+	[loading /modules/jdk.javadoc/module-info.class]
+	[loading /modules/jdk.jlink/module-info.class]
+	[loading /modules/jdk.aot/module-info.class]
+	[loading /modules/java.net.http/module-info.class]
+	[loading /modules/jdk.unsupported.desktop/module-info.class]
+	[loading /modules/jdk.security.jgss/module-info.class]
+	[loading /modules/jdk.hotspot.agent/module-info.class]
+	[search path for source files: project1/src]
+	[search path for class files: /usr/java/jdk-11.0.12/lib/modules,.]
+	[loading /modules/java.base/java/lang/Object.class]
+	[loading /modules/java.base/java/lang/String.class]
+	[loading /modules/java.base/java/time/LocalDate.class]
+	[loading /modules/java.base/java/lang/Character.class]
+	[loading /modules/java.base/java/lang/Long.class]
+	[loading /modules/java.base/java/lang/Deprecated.class]
+	[loading /modules/java.base/java/lang/annotation/Retention.class]
+	[loading /modules/java.base/java/lang/annotation/RetentionPolicy.class]
+	[loading /modules/java.base/java/lang/annotation/Target.class]
+	[loading /modules/java.base/java/lang/annotation/ElementType.class]
+	[checking com.jdev.MainEntryPoint]
+	[loading /modules/java.base/java/io/Serializable.class]
+	[loading /modules/java.base/java/lang/AutoCloseable.class]
+	[loading /modules/java.base/java/lang/Number.class]
+	[loading /modules/java.base/java/lang/Byte.class]
+	[loading /modules/java.base/java/lang/Short.class]
+	[loading /modules/java.base/java/lang/Comparable.class]
+	[wrote project1/classes/com/jdev/MainEntryPoint.class]
+	[checking com.jdev.model.UserDetails]
+	[wrote project1/classes/com/jdev/model/UserDetails.class]
+	[checking com.jdev.model.User]
+	[wrote project1/classes/com/jdev/model/User.class]
+	[checking com.jdev.service.UserService]
+	[loading /modules/java.base/java/lang/Float.class]
+	[loading /modules/java.base/java/lang/Integer.class]
+	[loading /modules/java.base/java/lang/Double.class]
+	[loading /modules/java.base/java/lang/Boolean.class]
+	[loading /modules/java.base/java/lang/Void.class]
+	[loading /modules/java.base/java/lang/System.class]
+	[loading /modules/java.base/java/io/PrintStream.class]
+	[loading /modules/java.base/java/lang/Appendable.class]
+	[loading /modules/java.base/java/io/Closeable.class]
+	[loading /modules/java.base/java/io/FilterOutputStream.class]
+	[loading /modules/java.base/java/io/OutputStream.class]
+	[loading /modules/java.base/java/io/Flushable.class]
+	[loading /modules/java.base/java/lang/CharSequence.class]
+	[loading /modules/java.base/java/lang/invoke/StringConcatFactory.class]
+	[loading /modules/java.base/java/lang/invoke/MethodHandles.class]
+	[loading /modules/java.base/java/lang/invoke/MethodHandles$Lookup.class]
+	[loading /modules/java.base/java/lang/invoke/MethodType.class]
+	[loading /modules/java.base/java/lang/invoke/CallSite.class]
+	[wrote project1/classes/com/jdev/service/UserService.class]
+	[total 171ms]
+
+tree project1/classes/
+	project1/classes/
+	└── com
+		└── jdev
+			├── MainEntryPoint.class
+			├── model
+			│   ├── User.class
+			│   └── UserDetails.class
+			└── service
+				└── UserService.class
+
+	4 directories, 4 files
+
+java -cp project1/classes/ com.jdev.MainEntryPoint
+	user id - 10 User name - Alex, username - alex@gmail.com, gender - M, date of birth - 20.09.1982
+
+javac -verbose -d project2/classes/ -sourcepath ./project2/src/ -cp ./project1/classes/ ./project2/src/com/jdev/project2/Main.java 
+	[parsing started SimpleFileObject[/home/java_dev/projects/github/java_basic/java_se/java_project_thru_terminal/project2/src/com/jdev/project2/Main.java]]
+	[parsing completed 14ms]
+	[loading /modules/java.transaction.xa/module-info.class]
+	[loading /modules/java.naming/module-info.class]
+	[loading /modules/jdk.localedata/module-info.class]
+	[loading /modules/jdk.jdeps/module-info.class]
+	[loading /modules/jdk.unsupported/module-info.class]
+	[loading /modules/jdk.pack/module-info.class]
+	[loading /modules/jdk.editpad/module-info.class]
+	[loading /modules/jdk.jshell/module-info.class]
+	[loading /modules/jdk.jcmd/module-info.class]
+	[loading /modules/jdk.unsupported.desktop/module-info.class]
+	[loading /modules/jdk.internal.vm.compiler/module-info.class]
+	[loading /modules/java.logging/module-info.class]
+	[loading /modules/jdk.jstatd/module-info.class]
+	[loading /modules/jdk.internal.vm.ci/module-info.class]
+	[loading /modules/jdk.internal.jvmstat/module-info.class]
+	[loading /modules/jdk.internal.vm.compiler.management/module-info.class]
+	[loading /modules/jdk.hotspot.agent/module-info.class]
+	[loading /modules/jdk.management.jfr/module-info.class]
+	[loading /modules/java.scripting/module-info.class]
+	[loading /modules/java.se/module-info.class]
+	[loading /modules/java.instrument/module-info.class]
+	[loading /modules/java.compiler/module-info.class]
+	[loading /modules/jdk.xml.dom/module-info.class]
+	[loading /modules/jdk.internal.opt/module-info.class]
+	[loading /modules/jdk.naming.ldap/module-info.class]
+	[loading /modules/java.security.sasl/module-info.class]
+	[loading /modules/jdk.httpserver/module-info.class]
+	[loading /modules/jdk.jdi/module-info.class]
+	[loading /modules/jdk.crypto.ec/module-info.class]
+	[loading /modules/jdk.jsobject/module-info.class]
+	[loading /modules/java.smartcardio/module-info.class]
+	[loading /modules/jdk.management/module-info.class]
+	[loading /modules/jdk.jartool/module-info.class]
+	[loading /modules/jdk.naming.rmi/module-info.class]
+	[loading /modules/jdk.scripting.nashorn/module-info.class]
+	[loading /modules/jdk.jdwp.agent/module-info.class]
+	[loading /modules/java.datatransfer/module-info.class]
+	[loading /modules/jdk.zipfs/module-info.class]
+	[loading /modules/jdk.management.agent/module-info.class]
+	[loading /modules/jdk.rmic/module-info.class]
+	[loading /modules/java.management.rmi/module-info.class]
+	[loading /modules/java.prefs/module-info.class]
+	[loading /modules/jdk.javadoc/module-info.class]
+	[loading /modules/jdk.jfr/module-info.class]
+	[loading /modules/jdk.jconsole/module-info.class]
+	[loading /modules/jdk.jlink/module-info.class]
+	[loading /modules/java.sql.rowset/module-info.class]
+	[loading /modules/jdk.internal.ed/module-info.class]
+	[loading /modules/jdk.dynalink/module-info.class]
+	[loading /modules/java.management/module-info.class]
+	[loading /modules/jdk.compiler/module-info.class]
+	[loading /modules/jdk.naming.dns/module-info.class]
+	[loading /modules/jdk.aot/module-info.class]
+	[loading /modules/jdk.security.jgss/module-info.class]
+	[loading /modules/jdk.accessibility/module-info.class]
+	[loading /modules/java.security.jgss/module-info.class]
+	[loading /modules/java.rmi/module-info.class]
+	[loading /modules/jdk.charsets/module-info.class]
+	[loading /modules/java.xml/module-info.class]
+	[loading /modules/jdk.crypto.cryptoki/module-info.class]
+	[loading /modules/jdk.sctp/module-info.class]
+	[loading /modules/java.xml.crypto/module-info.class]
+	[loading /modules/java.desktop/module-info.class]
+	[loading /modules/jdk.security.auth/module-info.class]
+	[loading /modules/jdk.internal.le/module-info.class]
+	[loading /modules/java.base/module-info.class]
+	[loading /modules/jdk.scripting.nashorn.shell/module-info.class]
+	[loading /modules/jdk.attach/module-info.class]
+	[loading /modules/jdk.net/module-info.class]
+	[loading /modules/java.sql/module-info.class]
+	[loading /modules/java.net.http/module-info.class]
+	[search path for source files: ./project2/src]
+	[search path for class files: /usr/java/jdk-11.0.12/lib/modules,./project1/classes]
+	[loading ./project1/classes/com/jdev/service/UserService.class]
+	[loading /modules/java.base/java/lang/Object.class]
+	[loading /modules/java.base/java/lang/String.class]
+	[loading /modules/java.base/java/lang/Deprecated.class]
+	[loading /modules/java.base/java/lang/annotation/Retention.class]
+	[loading /modules/java.base/java/lang/annotation/RetentionPolicy.class]
+	[loading /modules/java.base/java/lang/annotation/Target.class]
+	[loading /modules/java.base/java/lang/annotation/ElementType.class]
+	[checking com.jdev.project2.Main]
+	[loading /modules/java.base/java/io/Serializable.class]
+	[loading /modules/java.base/java/lang/AutoCloseable.class]
+	[loading /modules/java.base/java/lang/Long.class]
+	[loading /modules/java.base/java/lang/System.class]
+	[loading /modules/java.base/java/io/PrintStream.class]
+	[loading /modules/java.base/java/lang/Appendable.class]
+	[loading /modules/java.base/java/io/Closeable.class]
+	[loading /modules/java.base/java/io/FilterOutputStream.class]
+	[loading /modules/java.base/java/io/OutputStream.class]
+	[loading /modules/java.base/java/io/Flushable.class]
+	[loading /modules/java.base/java/lang/Comparable.class]
+	[loading /modules/java.base/java/lang/CharSequence.class]
+	[loading /modules/java.base/java/lang/Number.class]
+	[loading /modules/java.base/java/lang/Byte.class]
+	[loading /modules/java.base/java/lang/Character.class]
+	[loading /modules/java.base/java/lang/Short.class]
+	[wrote project2/classes/com/jdev/project2/Main.class]
+	[total 167ms]
+
+tree project2/classes/
+	project2/classes/
+	└── com
+		└── jdev
+			└── project2
+				└── Main.class
+
+	3 directories, 1 file
+
+java -cp project1/classes/:./project2/classes/ com.jdev.project2.Main
+	user id - 150 User name - Alex, username - alex@gmail.com, gender - M, date of birth - 20.09.1982
+	Here in PROJECT2 we use classes from PROJECT1
+
+java -cp project1/classes/:./project2/classes/ com.jdev.MainEntryPoint
+	user id - 10 User name - Alex, username - alex@gmail.com, gender - M, date of birth - 20.09.1982

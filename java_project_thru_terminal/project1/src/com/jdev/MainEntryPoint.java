@@ -1,4 +1,4 @@
-ackage com.jdev;
+package com.jdev;
 
 import com.jdev.service.UserService;
 
