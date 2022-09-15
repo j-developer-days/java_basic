@@ -1,0 +1,20 @@
+--show content of project1.jar
+jar -tf ./project1/jar/project1.jar 
+
+----show content
+jar -tf ./project1/jar/project1_long_option_variant.jar 
+
+--show content not compressed
+jar -tf ./project1/jar/project1_not_compress.jar 
+
+--show content jar file without manifest file
+jar -tf ./project1/jar/project1_without_manifest.jar 
+
+--show content jar file from project2
+jar -tf ./project2/jar/project2.jar 
+
+--show content jar file from project2, with -v option more details(size, date)
+jar -tvf ./project2/jar/project2.jar 
+
+--show content jar file project2 which containt both project classes
+jar -tvf ./project2/jar/project2_with_project1.jar
