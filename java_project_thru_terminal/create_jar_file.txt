@@ -1,0 +1,17 @@
+--create jar file project1.jar
+jar -cfv ./project1/jar/project1.jar -C ./project1/classes/ .
+
+--create jar file long version options of previous variant
+jar --create --verbose --file ./project1/jar/project1_long_option_variant.jar -C ./project1/classes/ .
+
+--create jar file without compression, -0 option
+jar -cfv0 ./project1/jar/project1_not_compress.jar -C ./project1/classes/ .
+
+--create jar file without manifest file
+jar -cfvM ./project1/jar/project1_without_manifest.jar -C ./project1/classes/ .
+
+--create jar file project2.jar
+jar -cfv ./project2/jar/project2.jar -C ./project2/classes/ .
+
+--create jar file with union of classes from project 1 and project 2
+jar -cfv ./project2/jar/project2_with_project1.jar -C ./project1/classes/ . -C ./project2/classes/ .
