@@ -1,0 +1,18 @@
+Main-Class: com.jdev.project2.Main
+Class-Path: project1.jar
+
+Name: project1
+Specification-Title: project 1
+Specification-Version: 1.0
+Specification-Vendor: J dev Tech, Inc.
+Implementation-Title: com.jdev
+Implementation-Version: build19
+Implementation-Vendor: J dev Tech, Inc.
+
+Name: example
+Specification-Title: example
+Specification-Version: 1.9
+Specification-Vendor: J Tech, Inc.
+Implementation-Title: com
+Implementation-Version: build73215
+Implementation-Vendor: J Tech, Inc.
