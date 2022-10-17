@@ -1,5 +1,5 @@
-import java.util.Random;
 import java.util.Base64;
+import java.util.Random;
 
 public class ImportDemo {
 

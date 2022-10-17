@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Created-By: 11.0.12 (Oracle Corporation)
+Main-Class: com.jdev.ReadSystemProperties
+
+Name: com/jdev/ReadSystemProperties.class
+SHA-256-Digest: RPnR92GijSiqlXEeUdFU5fplcns/AKZkEyiD5rfeTkM=
+
