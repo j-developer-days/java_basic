@@ -1,0 +1,14 @@
+--create certificate
+keytool -genkeypair -alias jdev30 -validity 30 -v -keystore jdev_store
+keytool -genkeypair -alias jdev90 -v -keystore jdev_store
+keytool -genkeypair -alias jdev180 -validity 180 -v -keystore jdev_store
+
+--show by keystore name with verbose
+keytool -list -v -keystore ./jdev_store
+
+--show by keystore name with rfc
+keytool -list -rfc -keystore ./jdev_store
+
+--delete certificate
+keytool -delete -keystore jdev_store
+keytool -delete -keystore jdev_store -alias jdev
